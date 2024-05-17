@@ -1,0 +1,20 @@
+name : "My First Workflow"
+
+on : 
+  pull_request_target : 
+    branches : 
+      -   main
+  issues :
+    types :
+      -   opened
+      -   edited
+      -   deleted
+
+jobs :
+    hello_world_job :
+        runs-on : ubuntu-latest
+        steps :
+            -   name : "Checkout"
+                uses : actions/checkout@v2
+            -   name : "Hello World"
+                run : echo "Hello World"
