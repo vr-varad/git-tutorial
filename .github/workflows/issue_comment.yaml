@@ -14,8 +14,15 @@ jobs:
        - name: "new issue opened"
          run: echo  '${{ toJSON(github.event) }}' | jq
          shell: bash
+         
        - name: Create comment
-         uses: actions/first-interaction@v1
+         uses: peter-evans/create-or-update-comment@v4
          with:
-              repo-token: ${{ secrets.GITHUB_TOKEN }}
-              issue-message: "Message that will be displayed on users' first issue #${{github.event.issue.number}}"
+          issue-number: ${{github.event.issue.number}}
+          body: |
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [create-or-update-comment][1]
+
+            [1]: https://github.com/peter-evans/create-or-update-comment
+          reactions: '+1'
