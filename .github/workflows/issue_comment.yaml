@@ -11,6 +11,6 @@ jobs:
        - name: "install jq"
          run: sudo apt-get update && sudo apt-get install -y jq
          
-       - name: "new_issue_opened"
-         run: echo "${{ toJSON(github.event) }}" | jq
+       - name: "new issue opened"
+         run: echo  '${{ toJSON(github.event) }}' | jq
          shell: bash
