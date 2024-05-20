@@ -21,3 +21,5 @@ jobs:
           body: |
             Thanks for opening this new issue.
           reactions: '+1'
+          env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
