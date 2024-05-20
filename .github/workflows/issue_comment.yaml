@@ -1,0 +1,13 @@
+name: New_issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment-with-action:
+    runs-on: ubuntu-latest
+    steps:
+       - name: "new_issue_opened"
+         run: echo "${{toJSON(github.event)}}" | jq
+         shell: bash
