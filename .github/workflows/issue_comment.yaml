@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: "new_issue_opened"
-         run: echo "${{toJSON(github.event)}}" | jq
+         run: echo "${{ toJSON(github.event) }}" | jq
          shell: bash
