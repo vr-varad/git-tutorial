@@ -15,11 +15,7 @@ jobs:
          run: echo  '${{ toJSON(github.event) }}' | jq
          shell: bash
        - name: Create comment
-         uses: peter-evans/create-or-update-comment@v3
+         uses: actions/first-interaction@v1
          with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            Thanks for opening this new issue.
-          reactions: '+1'
-          env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+              repo-token: ${{ secrets.GITHUB_TOKEN }}
+              issue-message: "Message that will be displayed on users' first issue #${{github.event.issue.number}}"
