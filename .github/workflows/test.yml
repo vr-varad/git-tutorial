@@ -1,0 +1,12 @@
+name: testing-workflows
+
+on: [push]
+
+jobs:
+  testing-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set environment variable
+        run: echo "Server Starts at port $PORT"
+        env:
+          PORT: 3000
