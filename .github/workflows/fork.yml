@@ -1,0 +1,10 @@
+name: Forked!!
+run-name: ${{github.actor}} just forked.
+on: [fork]
+jobs:
+    who-forked:
+        runs-on: ubuntu-latest
+        steps:
+            - env:
+                ACTOR: ${{github.actor}}
+              run: echo "$ACTOR just forked you repository"  
