@@ -1,0 +1,13 @@
+name : Python Linting
+
+on : 
+    [push, pull_request, pull_request_target]
+
+jobs:
+    python-linting-code:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Super-Linter
+              uses: super-linter/super-linter@v6.5.1
+        
+    
