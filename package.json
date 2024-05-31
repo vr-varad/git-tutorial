@@ -1,0 +1,15 @@
+{
+  "name": "git-tutorial",
+  "version": "1.0.0",
+  "description": "powers your folder to use git and initializes a git repo. creates a .git folder that manages the version of our program.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
